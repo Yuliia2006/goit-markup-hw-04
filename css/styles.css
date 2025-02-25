@@ -448,6 +448,7 @@ button {
 .container-footer {
   align-items: center;
   padding-right: 120px;
+  padding-left: 156px;
 }
 .footer-logo {
   display: inline-block;
@@ -482,8 +483,9 @@ button {
   height: 24px;
   margin-bottom: 16px;
 }
-.container {
+.container-page-footer {
   display: flex;
+  align-items: center;
 }
 .footer-icon-item {
 }
