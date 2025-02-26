@@ -58,6 +58,8 @@ button {
 
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -77,6 +79,7 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
+  transitio: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-logo {
   margin-right: 76px;
@@ -106,14 +109,15 @@ button {
   position: relative;
   color: #404bbf;
 }
-.current::before {
+.current::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   background-color: #404bbf;
+  border-radius: 2px;
 }
 .contacts {
   font-style: normal;
@@ -133,6 +137,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* #endregion header */
 
@@ -140,7 +145,7 @@ button {
 
 .hero {
   margin: 0 auto;
-  max-width: 1440рх;
+  max-width: 1440px;
   background-color: #2e2f42;
   padding: 188px 0;
   background-image: linear-gradient(
@@ -150,6 +155,7 @@ button {
     url(../images/hero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-title {
@@ -178,6 +184,7 @@ button {
   bottom: none;
   height: 56px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -238,6 +245,10 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+}
+
+.container {
+  margin-bottom: 8px;
 }
 
 .icon {
@@ -371,6 +382,7 @@ button {
 
 .portfolio-item {
   width: calc((100%-5 * 24)) / 6;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-block {
   position: relative;
@@ -403,6 +415,7 @@ button {
   overflow: auto;
   opacity: 0;
   transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-img {
@@ -447,7 +460,7 @@ button {
 }
 .container-footer {
   align-items: center;
-  padding-right: 120px;
+  margin-right: 120px;
   padding-left: 156px;
 }
 .footer-logo {
@@ -485,11 +498,13 @@ button {
 }
 .container-page-footer {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 .footer-icon-item {
 }
-.icon-lin {
+.icon-lin:hover,
+.icon-lin:focus {
+  background-color: #31d0aa;
 }
 .social-icon {
 }
